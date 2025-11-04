@@ -9,6 +9,8 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")
     `maven-publish`
+    application
+    id("com.gradleup.shadow")
 }
 
 // FIXME adjust as needed
@@ -130,6 +132,11 @@ tasks.withType<Test> {
         }
     })
 }
+
+application {
+    mainClass.set("com.jillesvangurp.mainKt")
+}
+
 
 
 
